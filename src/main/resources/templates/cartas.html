@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Cartas</title>
+</head>
+<body>
+  <h1>Lista de Cartas</h1>
+  <table>
+    <tr>
+      <th>ID </th><th> Nome Pokemon </th><th> Raridade da Carta </th><th> Preço de venda</th>
+      <tr th:each="carta : ${cartas}">
+        <td th:text="${carta.uuid}"></td>
+        <td th:text="${carta.nomePokemon}"></td>
+        <td th:text="${carta.raridadeCarta}"></td>
+        <td th:text="${carta.precoVenda}"></td>
+        <td>
+          <form method="delete" th:action="@{cartas/delete/{id}(id=${carta.uuid})}"></form>
+          <button type="submit">Excluir</button>
+        </td>
+
+      </tr>
+    </tr>
+  </table>
+  <button><a href="add-cartas">Nova Carta</a></button>
+</body>
+</html>

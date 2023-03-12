@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adicionar carta</title>
+</head>
+<body>
+  <h1>Adicionar Usuário</h1>
+  <form th:action="@{cartas}" method="post">
+    <label>Nome Pokemon</label>
+    <input type="text" name="nomePokemon">
+    <br/>
+
+    <label>Raridade Carta</label>
+    <input type="text" name="raridadeCarta">
+    <br/>
+
+    <label>Preco de Venda</label>
+    <input type="number" name="precoVenda">
+    <br/>
+
+    <button type="submit">Salvar</button>
+
+  </form>
+</body>
+</html>
